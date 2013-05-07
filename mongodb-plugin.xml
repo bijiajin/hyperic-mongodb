@@ -17,9 +17,11 @@
     Document   : mongodb-plugin.xml
     Author     : Reid Morrison
     Home Page  : https://github.com/ClarityServices/hyperic-mongodb
-    Version    : 2.1
+    Version    : 2.2
     Description:
         Hyperic HQ Plug-in to monitor MongoDB
+
+    Version 2.2 Supports MongoDB V2.4 which switches to the V8 JavaScript engine
 
     Version 2.1 Adds support for secured servers and re-introduces
     process monitoring using config file name for process auto-detection
@@ -79,13 +81,33 @@ function replicaSecondsBehind() {
   }
 };
 
+// Returns the current Shell Version number
+// As of V2.4 it returns the actual version ( switched to V8 JavaScript engine)
+function mongoShellVersion() {
+     if (version() == undefined) {
+         return 2.2;
+     } else {
+         return parseFloat(version());
+     }
+};
+
 // Print BSON as name value pairs
-function flattenBson(hash, prefix) {
+function flattenBson(hash, prefix, mongo_version) {
     for(key in hash) {
         value = hash[key];
-        klass = Object.prototype.toString.call(value).slice(8, -1);
-        if(klass == "bson_object") {
-            flattenBson(value, prefix+"_"+key)
+        is_object = false;
+        if(mongo_version < 2.4) {
+            klass = Object.prototype.toString.call(value).slice(8, -1);
+            if(klass == "bson_object") {
+                is_object = true;
+            }
+        } else {
+            if(value.constructor().toString().indexOf('Object') > 0) {
+                is_object = true;
+            }
+        }
+        if(is_object > 0) {
+            flattenBson(value, prefix+"_"+key, mongo_version)
         } else {
             print(prefix+"_"+key+"="+value)
         };
@@ -101,12 +123,13 @@ if (("$3" != "") && ("$3" != "%username%")) {
 }
 
 status = db.serverStatus();
-flattenBson(status, "serverStatus");
+mongo_version = mongoShellVersion();
+flattenBson(status, "serverStatus", mongo_version);
 
 // Additional metrics only if in a Replica Set
 repl = status["repl"];
 if(repl != null) {
-    flattenBson(db.getReplicationInfo(), "replication_info")
+    flattenBson(db.getReplicationInfo(), "replication_info", mongo_version)
     if(repl["secondary"] == true) {
         replicaSecondsBehind();
     }
