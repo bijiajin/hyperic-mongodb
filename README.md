@@ -116,14 +116,15 @@ Then update the page on [HyperForge](http://support.hyperic.com/display/hypcomm/
 
 ### Meta
 
-* Code: `git clone git://github.com/ClarityServices/hyperic-mongodb.git`
-* Home: <https://github.com/ClarityServices/hyperic-mongodb>
-* Bugs: <https://github.com/ClarityServices/hyperic-mongodb/issues>
+* Code: `git clone git://github.com/reidmorrison/hyperic-mongodb.git`
+* Home: <https://github.com/reidmorrison/hyperic-mongodb>
+* Bugs: <https://github.com/reidmorrison/hyperic-mongodb/issues>
 
 ### Author
 
-Reid Morrison :: rubywmq@gmail.com :: @reidmorrison
-Kroniak :: me@kroniak.net :: @kroniak
+Reid Morrison :: rubywmq@gmail.com :: [@reidmorrison](https://github.com/reidmorrison)
+
+Kroniak :: me@kroniak.net :: [@kroniak](https://github.com/kroniak)
 
 ### License
 
