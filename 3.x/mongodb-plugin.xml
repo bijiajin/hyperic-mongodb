@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-   Copyright 2011 Clarity Services, Inc.
+   Copyright 2016 Clarity Services, Inc.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
     Document   : mongodb-plugin.xml
     Author     : Reid Morrison
-    Home Page  : https://github.com/ClarityServices/hyperic-mongodb
+    Home Page  : https://github.com/reidmorrison/hyperic-mongodb
     Version    : 1.0
     Description:
         Hyperic HQ Plug-in to monitor MongoDB
@@ -403,7 +403,7 @@ mongo --host $1 --port $2 --quiet admin --eval "$JAVA_SCRIPT"
                 units="percentage"/>
     </metrics>
 
-    <server name="MongoDB" version="2.x">
+    <server name="MongoDB" version="3.x">
 
         <property name="PROC_QUERY" value="State.Name.eq=mongod,Args.*.eq=/etc/mongod.conf"/>
         <property name="DEFAULT_CONFIG_FILE" value="/etc/mongod.conf"/>
