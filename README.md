@@ -46,19 +46,25 @@ Mongo shell (mongo) and Bash Shell (bash)
 
 ### Mongodb Version Support
 
-Tested on Red Hat Enterprise Linux 5 with Mongodb 1.6.5
+- MongoDB Plugin 2.x tested on Red Hat Enterprise Linux 5 with Mongodb 1.6.5
+- MongoDB Plugin 3.x tested on Red Hat Enterprise Linux 7 with Mongodb 3.2.1
 
 ### Hyperic HQ Version Support
 
-Tested with [Hyperic HQ](http://www.hyperic.com/) version 4.4 and 4.5.1
+Tested with [Hyperic HQ](http://www.hyperic.com/) version 4.4, 4.5.1 and 5.8.2
 
 ### Install
 
 #### Server Installation
 
 * Fetch the latest version of the file using something like wget or a browser:
+- MongoDB Plugin 2.x
 <pre>
-wget --no-check-certificate https://github.com/ClarityServices/hyperic-mongodb/raw/master/mongodb-plugin.xml
+wget --no-check-certificate https://github.com/ClarityServices/hyperic-mongodb/raw/master/2.x/mongodb-plugin.xml
+</pre>
+- MongoDB Plugin 3.x
+<pre>
+wget --no-check-certificate https://github.com/ClarityServices/hyperic-mongodb/raw/master/3.x/mongodb-plugin.xml
 </pre>
 * Copy the file _hyperic-mongodb.xml_ into the following folder under the server installation
 
@@ -117,10 +123,11 @@ Then update the page on [HyperForge](http://support.hyperic.com/display/hypcomm/
 ### Author
 
 Reid Morrison :: rubywmq@gmail.com :: @reidmorrison
+Kroniak :: me@kroniak.net :: @kroniak
 
 ### License
 
-Copyright 2011 Clarity Services, Inc.
+Copyright 2016 Clarity Services, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
