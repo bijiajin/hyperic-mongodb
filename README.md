@@ -60,13 +60,13 @@ Tested with [Hyperic HQ](http://www.hyperic.com/) version 4.4, 4.5.1 and 5.8.2
 * Fetch the latest version of the file using something like wget or a browser:
 - MongoDB Plugin 2.x
 <pre>
-wget --no-check-certificate https://raw.githubusercontent.com/reidmorrison/hyperic-mongodb/master/2.x/mongodb-plugin.xml
+wget --no-check-certificate https://raw.githubusercontent.com/ClarityServices/hyperic-mongodb/master/2.x/mongodb-plugin.xml
 </pre>
 - MongoDB Plugin 3.x
 <pre>
-wget --no-check-certificate https://raw.githubusercontent.com/reidmorrison/hyperic-mongodb/master/3.x/mongodb-plugin.xml
+wget --no-check-certificate https://raw.githubusercontent.com/ClarityServices/hyperic-mongodb/master/3.x/mongodb-plugin.xml
 </pre>
-* Copy the file _hyperic-mongodb.xml_ into the following folder under the server installation
+* Copy the file _mongodb-plugin.xml_ into the following folder under the server installation
 
 ** For Hyperic 4.5.1
 <pre>
@@ -89,7 +89,7 @@ along with several other files ending with _-plugin.xml_ and _-plugin.jar_
 
 #### Client Installation
 
-* Copy the file _hyperic-mongodb.xml_ into the plugins folder under the client installation. The path should be similar to:
+* Copy the file _mongodb-plugin.xml_ into the plugins folder under the client installation. The path should be similar to:
 
 ** For Hyperic 4.5.1
 <pre>
@@ -116,9 +116,9 @@ Then update the page on [HyperForge](http://support.hyperic.com/display/hypcomm/
 
 ### Meta
 
-* Code: `git clone git://github.com/reidmorrison/hyperic-mongodb.git`
-* Home: <https://github.com/reidmorrison/hyperic-mongodb>
-* Bugs: <https://github.com/reidmorrison/hyperic-mongodb/issues>
+* Code: `git clone git://github.com/ClarityServices/hyperic-mongodb.git`
+* Home: <https://github.com/ClarityServices/hyperic-mongodb>
+* Bugs: <https://github.com/ClarityServices/hyperic-mongodb/issues>
 
 ### Author
 
